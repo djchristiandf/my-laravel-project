@@ -1,5 +1,11 @@
 #!/bin/bash
 
+# Altera as permissões do diretório /var/www/laravel/storage
+echo "Altera as permissões do diretório /var/www/laravel/storage"
+chown -R www-data:www-data /var/www/laravel/storage \
+  && chmod -R 775 /var/www/laravel/storage \
+  && chmod -R g+s /var/www/laravel/storage
+
 echo "entrar no projeto para o composer install e instalar  o jetstream"
 cd /var/www/laravel
 
